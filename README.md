@@ -1,2 +1,2 @@
 # Scripts-Python
-**Some Scripts ant tests in Python**
+**Some Scripts and tests in Python**
