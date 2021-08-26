@@ -1,0 +1,42 @@
+Caso vôce não tenha o interpretador do python mas queira ver o script.
+Esse arquivo n é executável.
+
+
+#Programado por GM_Senpai
+
+from PIL import Image
+
+import pyautogui as py
+
+from time import sleep
+
+
+
+branco1 = range(0,31)
+
+
+try:
+    arquivo = open('arquivo.txt', 'w')
+    imagem = Image.open('testeGartic.png')
+    rgb = imagem.convert('RGB')
+    preto = []
+
+    sleep(5)
+
+    for x in range(295, 801):
+        for y in range(226, 639):
+            preto.append(str(x))
+            preto.append(str(y))
+            preto.append('\n')
+
+            cor = rgb.getpixel((x, y))
+            for branco in branco1:
+                if cor == (branco,branco,branco):
+                    print('Preto', x, y)
+                    py.click(x=x, y=y, button='left')
+            if cor == (152,152,152) or cor == (151, 151, 151) or cor == (79,79,79) or cor == (86,86,86):
+                print('Preto', x, y)
+                py.click(x=x, y=y, button='left')
+
+except KeyboardInterrupt:
+    exit()
